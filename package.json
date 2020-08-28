@@ -9,7 +9,7 @@
     "learning": "npm run start --prefix learning",
     "dev": "concurrently \"npm run server\" \"npm run learning\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix learning && npm run build --prefix learning",
-    "prod": "concurrently \"npm run server\" \"npm run learning/build\""
+    "prod": "concurrently \"npm run start\" \"npm run learning/build\""
   },
   "keywords": [],
   "author": "",
