@@ -7,7 +7,9 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "learning": "npm run start --prefix learning",
-    "dev": "concurrently \"npm run server\" \"npm run learning\""
+    "dev": "concurrently \"npm run server\" \"npm run learning\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix learning && npm run build --prefix learning"
+
   },
   "keywords": [],
   "author": "",
