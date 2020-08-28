@@ -18,15 +18,16 @@ let emailPwd;
   emailPwd = process.env.EMAIL_PWD;
 
   if(process.env.NODE_ENV === 'production') {
-    emailId = process.env.EMAIL;
-    emailPwd = process.env.EMAIL_PWD;
+    emailId = process.env.HEROKU_EMAIL;
+    emailPwd = process.env.HEROKU_EMAIL_PWD;
     app.use(express.static('learning/build'))
     app.get('*', (req,res)=> res.sendFile(path.resolve(__dirname, 'learning', 'build', 'index.html')))
-
-  }
+    
+  }  
 
 app.post('/api/form', (req,res) => {
         console.log('Received')
+        console.log(process.env.NODE_ENV)
     
         const htmlEmail = `
         <h3>Contact Details</h3>
